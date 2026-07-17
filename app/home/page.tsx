@@ -3,6 +3,8 @@ import { supabase } from "@/lib/supabase";
 import HomeMap from "./HomeMap";
 import BottomNav from "@/components/BottomNav";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const { data: places } = await supabase
     .from("places")

@@ -2,6 +2,7 @@
 import { supabase } from "@/lib/supabase";
 import MapClient from "./MapClient";
 import BottomNav from "@/components/BottomNav";
+export const dynamic = "force-dynamic";
 
 type Place = {
   id: string;
