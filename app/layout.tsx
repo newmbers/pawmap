@@ -9,6 +9,19 @@ const dmSans = DM_Sans({
 export const metadata = {
   title: "Pawmap",
   description: "Find dog-friendly places in Kiel",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Pawmap",
+  },
+};
+
+export const viewport = {
+  themeColor: "#F0EDE4",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
