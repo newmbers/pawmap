@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -39,7 +40,14 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#974315] flex flex-col">
       {/* Hero top */}
-      <div className="flex flex-col items-center pt-20 pb-12 px-6">
+      <div className="flex flex-col items-center pt-12 pb-12 px-6">
+        <Image
+          src="/dog_icon.png"
+          alt=""
+          width={180}
+          height={180}
+          className="mb-3"
+        />
         <h1 className="text-3xl font-black text-[#F0EDE4] tracking-tight">
           PAWMAP
         </h1>
