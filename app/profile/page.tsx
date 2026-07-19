@@ -196,7 +196,7 @@ export default function ProfilePage() {
         </div>
 
         {savedPlaces.length > 0 ? (
-          <div className="flex flex-col gap-2.5 mb-8">
+          <div className="flex flex-col gap-2.5 mb-8 active:scale-[0.98] transition">
             {savedPlaces.map((saved) => (
               <div
                 key={saved.place_id}

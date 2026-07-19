@@ -65,7 +65,7 @@ export default function SaveButton({ placeId }: { placeId: string }) {
   return (
     <button
       onClick={handleToggle}
-      className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-lg transition ${
+      className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-lg transition active:scale-[0.98] transition ${
         saved
           ? "bg-[#974315] text-[#F0EDE4]"
           : "bg-white/30 backdrop-blur text-white"

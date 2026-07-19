@@ -33,13 +33,13 @@ export default function StartPage() {
       <div className="w-full max-w-sm flex flex-col gap-3">
         <Link
           href="/login"
-          className="w-full py-3.5 rounded-full border-2 border-[#974315] text-[#974315] font-bold text-center"
+          className="w-full py-3.5 rounded-full border-2 border-[#974315] text-[#974315] font-bold text-center active:scale-95 transition"
         >
           Log in
         </Link>
         <Link
           href="/signup"
-          className="w-full py-3.5 rounded-full bg-[#974315] text-[#F0EDE4] font-bold text-center"
+          className="w-full py-3.5 rounded-full bg-[#974315] text-[#F0EDE4] font-bold text-center active:scale-95 transition"
         >
           Sign up
         </Link>

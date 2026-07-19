@@ -2,6 +2,8 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import BottomNav from "@/components/BottomNav";
 import SearchBar from "./SearchBar";
+import { Suspense } from "react";
+import BackButton from "@/components/BackButton";
 
 type Place = {
   id: string;
@@ -71,16 +73,19 @@ export default async function PlacesPage({
   return (
     <main className="min-h-screen bg-[#F0EDE4] px-4 pb-28 pt-6">
       <div className="max-w-md mx-auto">
-        {/* Header */}
-        <h1 className="text-2xl font-extrabold text-[#2a2a2a] text-center mb-5">
-          Nearby spots
-        </h1>
+        <div className="flex items-center mb-5">
+          <BackButton />
+          <h1 className="text-2xl font-extrabold text-[#2a2a2a] flex-1 text-center pr-10">
+            Nearby spots
+          </h1>
+        </div>
 
         {/* Search bar */}
-        <SearchBar initialQuery={q || ""} category={category || ""} />
-
+        <Suspense fallback={null}>
+          <SearchBar initialQuery={q || ""} category={category || ""} />
+        </Suspense>
         {/* Filter chips */}
-        <div className="flex gap-2 mt-4 mb-5 flex-wrap">
+        <div className="flex gap-2 mt-4 mb-5 flex-wrap justify-center">
           {categories.map((cat) => {
             const isActive = (category || "") === cat.value;
             const href = cat.value
@@ -90,7 +95,7 @@ export default async function PlacesPage({
               <Link
                 key={cat.value}
                 href={href}
-                className={`text-xs font-bold px-4 py-2 rounded-full border ${
+                className={`text-xs font-bold px-4 py-2 rounded-full border active:scale-[0.98] transition ${
                   isActive
                     ? "bg-[#974315] text-[#F0EDE4] border-[#974315]"
                     : "bg-white text-[#2a2a2a] border-[#e8e4db]"
@@ -108,7 +113,7 @@ export default async function PlacesPage({
             <Link
               key={place.id}
               href={`/places/${place.id}`}
-              className="bg-white border border-[#e8e4db] rounded-2xl p-4 block"
+              className="bg-white border border-[#e8e4db] rounded-2xl p-4 block active:scale-[0.98] transition"
             >
               <h2 className="font-extrabold text-[#2a2a2a]">{place.name}</h2>
               <p className="text-xs text-[#788990] mt-0.5 capitalize">

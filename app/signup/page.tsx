@@ -125,7 +125,7 @@ async function handleSignup() {
           <button
             onClick={handleSignup}
             disabled={loading}
-            className="w-full py-3.5 rounded-full bg-[#974315] text-[#F0EDE4] font-bold disabled:opacity-60"
+            className="w-full py-3.5 rounded-full bg-[#974315] text-[#F0EDE4] font-bold disabled:opacity-60 active:scale-95 transition"
           >
             {loading ? "Creating account..." : "Create account"}
           </button>
