@@ -1,7 +1,21 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+
 import Link from "next/link";
 import Image from "next/image";
 
 export default function StartPage() {
+
+  const router = useRouter();
+
+    useEffect(() => {
+      supabase.auth.getUser().then(({ data }) => {
+        if (data.user) router.replace("/home");
+      });
+    }, [router]);
   return (
     <main className="min-h-screen bg-[#F0EDE4] flex flex-col items-center justify-between py-16 px-6">
       {/* Top spacer */}
@@ -42,6 +56,13 @@ export default function StartPage() {
           className="w-full py-3.5 rounded-full bg-[#974315] text-[#F0EDE4] font-bold text-center active:scale-95 transition"
         >
           Sign up
+        </Link>
+
+        <Link
+          href="/home"
+          className="text-center text-sm font-bold text-[#788990] mt-4 active:scale-95 transition"
+        >
+          Continue as guest →
         </Link>
       </div>
     </main>

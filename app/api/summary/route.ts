@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,14 +39,18 @@ export async function POST(request: Request) {
             },
           ],
           generationConfig: {
-            maxOutputTokens: 150,
+            maxOutputTokens: 750,
             temperature: 0.4,
+            thinkingConfig: {
+              thinkingLevel: "low",
+            },
           },
         }),
       }
     );
 
     const data = await response.json();
+    console.log("Gemini raw response:", JSON.stringify(data, null, 2));
 
     if (!response.ok) {
       console.error("Gemini error:", data);

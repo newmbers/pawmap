@@ -46,6 +46,7 @@ export default function AddPlacePage() {
   }
 
   async function handleSubmit() {
+    
     setError("");
 
     if (!name || !address || !category || !dogsAllowed) {

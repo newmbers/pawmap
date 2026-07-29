@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Pawmap",
     short_name: "Pawmap",
     description: "Find dog-friendly places in Kiel",
-    start_url: "/home",
+    start_url: "/",
     display: "standalone",
     background_color: "#F0EDE4",
     theme_color: "#F0EDE4",
