@@ -34,7 +34,7 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/places");
+    router.push("/home");
   }
 
   return (

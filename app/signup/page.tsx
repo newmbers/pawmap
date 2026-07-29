@@ -51,7 +51,7 @@ async function handleSignup() {
       });
     }
 
-    router.push("/places");
+    router.push("/home");
   }
 
   return (
@@ -68,7 +68,7 @@ async function handleSignup() {
               <h1 className="text-3xl font-black text-[#F0EDE4] tracking-tight">
                 PAWMAP
               </h1>
-              
+
         <p className="text-sm text-[#F0EDE4]/75 mt-2 text-center">
           Find dog-friendly places.
           <br />
